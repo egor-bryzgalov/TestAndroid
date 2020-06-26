@@ -16,11 +16,11 @@ steps:
     versionSpec: '8'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: 'app-debug.apk'
-    apksignerKeystoreFile: 'awwal'
-    apksignerKeystorePassword: 'password'
-    zipalign: false
-    apksignerKeystoreAlias: 'hafsa'
+#- task: AndroidSigning@3
+#  inputs:
+#    apkFiles: 'app-debug.apk'
+#    apksignerKeystoreFile: 'awwal'
+#    apksignerKeystorePassword: 'password'
+#    zipalign: false
+#    apksignerKeystoreAlias: 'hafsa'
      
