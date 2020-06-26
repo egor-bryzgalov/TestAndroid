@@ -17,3 +17,5 @@ steps:
     apksignerKeystoreFile: 'awwal'
     apksignerKeystorePassword: 'password'
     zipalign: false
+    apksignerKeystoreAlias: 'hafsa'
+     
