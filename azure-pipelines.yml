@@ -11,6 +11,11 @@ pool:
   name: Default
 steps:
 
+- task: JavaToolInstallerm@0
+  inputs:
+    versionSpec: '8'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
 - task: AndroidSigning@3
   inputs:
     apkFiles: 'app-debug.apk'
