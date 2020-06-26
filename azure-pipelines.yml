@@ -11,16 +11,12 @@ pool:
   name: Default
 steps:
 
-- task: JavaToolInstallerm@0
+
+- task: AndroidSigning@3
   inputs:
-    versionSpec: '8'
-    jdkArchitectureOption: 'x64'
-    jdkSourceOption: 'PreInstalled'
-#- task: AndroidSigning@3
-#  inputs:
-#    apkFiles: 'app-debug.apk'
-#    apksignerKeystoreFile: 'awwal'
-#    apksignerKeystorePassword: 'password'
-#    zipalign: false
-#    apksignerKeystoreAlias: 'hafsa'
+    apkFiles: 'app-debug.apk'
+    apksignerKeystoreFile: 'awwal'
+    apksignerKeystorePassword: 'password'
+    zipalign: false
+    apksignerKeystoreAlias: 'hafsa'
      
