@@ -13,7 +13,7 @@ steps:
 
 - task: Gradle@2
   inputs:
-    gradleWrapperFile: 'gradlew'
+    gradleWrapperFile: '.git/HEAD'
     workingDirectory: '$(Build.SourcesDirectory)/android'
     tasks: 'build'
     publishJUnitResults: true
