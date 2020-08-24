@@ -11,12 +11,24 @@ pool:
   name: Default
 steps:
 
-
-- task: AndroidSigning@3
+- task: Gradle@2
   inputs:
-    apkFiles: 'app-debug.apk'
-    apksignerKeystoreFile: 'awwal'
-    apksignerKeystorePassword: 'password'
-    zipalign: false
-    apksignerKeystoreAlias: 'hafsa'
-     
+    gradleWrapperFile: 'gradlew'
+    workingDirectory: '$(Build.SourcesDirectory)/android'
+    tasks: 'build'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+
+
+#- task: AndroidSigning@3
+#  inputs:
+#    apkFiles: 'app-debug.apk'
+##    apksignerKeystoreFile: 'awwal'
+##    apksignerKeystorePassword: 'password'
+ #   zipalign: false
+ #   apksignerKeystoreAlias: 'hafsa'
+
+
+   
