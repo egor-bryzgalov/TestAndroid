@@ -11,15 +11,15 @@ pool:
   name: Default
 steps:
 
-- task: Gradle@2
-  inputs:
-    gradleWrapperFile: 'C:\agent\_work\3\s\.git\HEAD'
-    workingDirectory: '$(Build.SourcesDirectory)/android'
-    tasks: 'build'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    sonarQubeRunAnalysis: false
+#- task: Gradle@2
+#  inputs:
+#    gradleWrapperFile: 'C:\agent\_work\3\s\.git\HEAD'
+#    workingDirectory: '$(Build.SourcesDirectory)/android'
+#    tasks: 'build'
+#    publishJUnitResults: true
+#    testResultsFiles: '**/TEST-*.xml'
+#    javaHomeOption: 'JDKVersion'
+#    sonarQubeRunAnalysis: false
 
 
 #- task: AndroidSigning@3
@@ -30,5 +30,11 @@ steps:
  #   zipalign: false
  #   apksignerKeystoreAlias: 'hafsa'
 
+- task: AndroidSigningm@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'awwal'
+    apksignerKeystorePassword: 'password'
+    apksignerKeystoreAlias: 'hafsa'
 
    
