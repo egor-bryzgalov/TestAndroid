@@ -37,5 +37,5 @@ steps:
     apksignerKeystorePassword: 'password'
     apksignerKeystoreAlias: 'hafsa'
     zipalign: false
-    apksignerVersion: 'latest'
+    apksignerVersion: '30'
    
