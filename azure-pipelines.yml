@@ -36,6 +36,6 @@ steps:
     apksignerKeystoreFile: 'awwal'
     apksignerKeystorePassword: 'password'
     apksignerKeystoreAlias: 'hafsa'
-    useLatestBuildTools: true
-
+    zipalign: false
+    apksignerVersion: 'latest'
    
