@@ -47,3 +47,4 @@ steps:
     script: |
       which curl
       curl -V
+      echo $PATH
