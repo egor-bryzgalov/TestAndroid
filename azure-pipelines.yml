@@ -7,10 +7,12 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
+  vmImage: 'Windows-latest'
   #name: Default
 steps:
-
+- task: CmdLine@2
+  inputs:
+    script: 'curl -V'
 #- task: Gradle@2
 #  inputs:
 #    gradleWrapperFile: 'C:\agent\_work\3\s\.git\HEAD'
