@@ -11,8 +11,23 @@ pool:
   #name: Default
 steps:
 
+- task: AndroidSigningm@2
+  inputs:
+    apkFiles: 'app-debug.apk'
+    jarsignerKeystoreFile: 'awwal'
+    jarsignerKeystorePassword: 'password'
+    zipalign: false
+    jarsignerKeystoreAlias: 'hafsa'
 
-- task: AndroidSigning@3
+- task: AndroidSigningm@2
+  inputs:
+    apkFiles: '**/*.apk'
+    jarsignerKeystoreFile: 'awwal'
+    jarsignerKeystorePassword: 'password'
+    jarsignerKeystoreAlias: 'hafsa'
+    zipalign: false
+
+- task: AndroidSigningm@3
   inputs:
     apkFiles: 'app-debug.apk'
     apksignerKeystoreFile: 'awwal'
