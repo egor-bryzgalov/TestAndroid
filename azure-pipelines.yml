@@ -32,7 +32,7 @@ steps:
     buildVersionToDownload: 'specific'
     buildId: '1471'
     downloadType: 'specific'
-    itemPattern: '*/test.txt'
+    itemPattern: 'blahblah/test.txt'
     downloadPath: '$(System.ArtifactsDirectory)'
     checkDownloadedFiles: true
 
