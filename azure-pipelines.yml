@@ -30,7 +30,7 @@ steps:
     downloadType: 'single'
     artifactName: 'drop'
     downloadPath: '$(System.ArtifactsDirectory)'
-    checkDownloadedFiles: true
+    checkDownloadedFiles: false
 
 #- task: AndroidSigningm@2
  # inputs:
