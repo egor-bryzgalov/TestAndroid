@@ -32,7 +32,7 @@ steps:
     buildVersionToDownload: 'specific'
     buildId: '1471'
     downloadType: 'specific'
-    itemPattern: 'test.txt'
+    itemPattern: '*/test.txt'
     downloadPath: '$(System.ArtifactsDirectory)'
 
 #- task: AndroidSigningm@2
