@@ -34,6 +34,7 @@ steps:
     downloadType: 'specific'
     itemPattern: '*/test.txt'
     downloadPath: '$(System.ArtifactsDirectory)'
+    checkDownloadedFiles: true
 
 #- task: AndroidSigningm@2
  # inputs:
