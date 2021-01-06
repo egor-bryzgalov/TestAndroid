@@ -20,7 +20,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Write-Host '##vso[artifact.upload artifactname=test;containerfolder=TEst;artifacttype=container;localpath=$(Build.ArtifactStagingDirectory)/test.txt]$(Build.ArtifactStagingDirectory)/test.txt'
+      Write-Host '##vso[artifact.upload artifactname=test;containerfolder=TEst1;artifacttype=container;localpath=$(Build.ArtifactStagingDirectory)/test.txt]$(Build.ArtifactStagingDirectory)/test.txt'
 
 #- task: AndroidSigningm@2
  # inputs:
