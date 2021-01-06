@@ -30,7 +30,7 @@ steps:
     project: '796fd84e-1ff6-498a-a8c1-5fe857957c21'
     pipeline: '6'
     buildVersionToDownload: 'specific'
-    buildId: '20210106.2'
+    buildId: '1471'
     downloadType: 'specific'
     itemPattern: 'test.txt'
     downloadPath: '$(System.ArtifactsDirectory)'
