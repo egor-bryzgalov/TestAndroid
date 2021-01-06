@@ -24,17 +24,16 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: DownloadBuildArtifacts@0
+- task: DownloadBuildArtifactsm@0
   inputs:
     buildType: 'specific'
     project: '796fd84e-1ff6-498a-a8c1-5fe857957c21'
-    pipeline: '6'
+    pipeline: '9'
     buildVersionToDownload: 'specific'
     buildId: '1471'
     downloadType: 'specific'
-    itemPattern: 'test.txt'
+    itemPattern: 'test.*'
     downloadPath: '$(System.ArtifactsDirectory)'
-    checkDownloadedFiles: true
 
 #- task: AndroidSigningm@2
  # inputs:
