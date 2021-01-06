@@ -11,35 +11,56 @@ pool:
   name: Default
 steps:
 
-- task: AndroidSigningm@2
+- task: Bash@3
   inputs:
-    apkFiles: 'app-debug.apk'
-    jarsignerKeystoreFile: 'awwal'
-    jarsignerKeystorePassword: 'password'
-    zipalign: false
-    jarsignerKeystoreAlias: 'hafsa'
+    targetType: 'inline'
+    script: |
+      mkdir 'test'
+      touch $(Build.ArtifactStagingDirectory)/test.txt
 
-- task: AndroidSigningm@2
+- task: PublishBuildArtifacts@1
   inputs:
-    apkFiles: '**/*.apk'
-    jarsignerKeystoreFile: 'awwal'
-    jarsignerKeystorePassword: 'password'
-    jarsignerKeystoreAlias: 'hafsa'
-    zipalign: false
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
 
-- task: AndroidSigningm@3
+- task: DownloadBuildArtifactsm@0
   inputs:
-    apkFiles: 'app-debug.apk'
-    apksignerKeystoreFile: 'awwal'
-    apksignerKeystorePassword: 'password'
-    zipalign: false
-    apksignerKeystoreAlias: 'hafsa'
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'drop'
+    downloadPath: '$(System.ArtifactsDirectory)'
+    checkDownloadedFiles: true
 
-- task: AndroidSigningm@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'awwal'
-    apksignerKeystorePassword: 'password'
-    apksignerKeystoreAlias: 'hafsa'
-    zipalign: false
-    apksignerVersion: 'latest'
+#- task: AndroidSigningm@2
+ # inputs:
+ #   apkFiles: 'app-debug.apk'
+ #   jarsignerKeystoreFile: 'awwal'
+ #   jarsignerKeystorePassword: 'password'
+ #   zipalign: false
+ #   jarsignerKeystoreAlias: 'hafsa'
+
+#- task: AndroidSigningm@2
+ # inputs:
+ #   apkFiles: '**/*.apk'
+ #   jarsignerKeystoreFile: 'awwal'
+ #   jarsignerKeystorePassword: 'password'
+ #   jarsignerKeystoreAlias: 'hafsa'
+ #   zipalign: false
+
+#- task: AndroidSigningm@3
+#  inputs:
+#    apkFiles: 'app-debug.apk'
+#    apksignerKeystoreFile: 'awwal'
+#    apksignerKeystorePassword: 'password'
+#    zipalign: false
+#    apksignerKeystoreAlias: 'hafsa'
+
+#- task: AndroidSigningm@3
+#  inputs:
+#    apkFiles: '**/*.apk'
+#    apksignerKeystoreFile: 'awwal'
+ #   apksignerKeystorePassword: 'password'
+#    apksignerKeystoreAlias: 'hafsa'
+#    zipalign: false
+#    apksignerVersion: 'latest'
