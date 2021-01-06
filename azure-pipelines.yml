@@ -13,7 +13,7 @@ pool:
 steps:
 - script: |
     mkdir 'test'
-    touch $(Build.ArtifactStagingDirectory)/test.txt
+    echo 'erer' > $(Build.ArtifactStagingDirectory)/test.txt
 
 - task: PublishBuildArtifacts@1
   inputs:
