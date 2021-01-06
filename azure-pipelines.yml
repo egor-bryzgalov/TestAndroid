@@ -24,7 +24,7 @@ steps:
     ArtifactName: 'drop'
     publishLocation: 'Container'
 
-- task: DownloadBuildArtifactsm@0
+- task: DownloadBuildArtifacts@0
   inputs:
     buildType: 'specific'
     project: '796fd84e-1ff6-498a-a8c1-5fe857957c21'
