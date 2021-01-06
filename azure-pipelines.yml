@@ -11,13 +11,9 @@ pool:
   name: Default
 
 steps:
-
-- task: Bash@3
-  inputs:
-    targetType: 'inline'
-    script: |
-      mkdir 'test'
-      touch $(Build.ArtifactStagingDirectory)/test.txt
+- pwsh: |
+    mkdir 'test'
+    touch $(Build.ArtifactStagingDirectory)/test.txt
 
 - task: PublishBuildArtifacts@1
   inputs:
