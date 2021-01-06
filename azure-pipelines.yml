@@ -15,13 +15,17 @@ steps:
     mkdir 'test'
     echo 'erer' > $(Build.ArtifactStagingDirectory)/test.txt
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'FilePath'
-    TargetPath: './test'
 
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host ##vso[artifact.upload
+      artifactname=test;
+      containerfolder=Staging;
+      artifacttype=container;
+      localpath=$(Build.ArtifactStagingDirectory)/test.txt
+      ]$(Build.ArtifactStagingDirectory)/test.txt
 
 #- task: AndroidSigningm@2
  # inputs:
