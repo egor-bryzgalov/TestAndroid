@@ -7,8 +7,9 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Ubuntu-latest'
-  #name: Default
+  #vmImage: 'Windows-latest'
+  name: Default
+
 steps:
 
 - task: Bash@3
@@ -22,19 +23,9 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
-    publishLocation: 'Container'
+    publishLocation: 'FilePath'
+    TargetPath: './test'
 
-- task: DownloadBuildArtifactsm@0
-  inputs:
-    buildType: 'specific'
-    project: '796fd84e-1ff6-498a-a8c1-5fe857957c21'
-    pipeline: '9'
-    buildVersionToDownload: 'specific'
-    buildId: '1471'
-    downloadType: 'specific'
-    itemPattern: 'blahblah/test.txt'
-    downloadPath: '$(System.ArtifactsDirectory)'
-    checkDownloadedFiles: true
 
 #- task: AndroidSigningm@2
  # inputs:
