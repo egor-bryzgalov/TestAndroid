@@ -20,10 +20,11 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      Write-Host '##vso[artifact.upload artifactname=test;containerfolder=TEst1;artifacttype=container;localpath=$(Build.ArtifactStagingDirectory)/test.txt]$(Build.ArtifactStagingDirectory)/test.txt'
+      Write-Host '##vso[artifact.upload containerfolder=TestFolder;artifacttype=container;localpath=$(Build.ArtifactStagingDirectory)/test.txt]$(Build.ArtifactStagingDirectory)/test.txt'
 
+# artifactname=test
 #- task: AndroidSigningm@2
- # inputs:
+ # inputs
  #   apkFiles: 'app-debug.apk'
  #   jarsignerKeystoreFile: 'awwal'
  #   jarsignerKeystorePassword: 'password'
