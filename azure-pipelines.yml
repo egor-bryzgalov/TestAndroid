@@ -22,6 +22,15 @@ steps:
     script: |
       Write-Host '##vso[artifact.upload artifactname=test;artifacttype=container]$(Build.ArtifactStagingDirectory)/test.txt'
 
+- task: Gradle@2
+  inputs:
+    gradleWrapperFile: 'gradlew'
+    tasks: 'build'
+    publishJUnitResults: true
+    testResultsFiles: '**/TEST-*.xml'
+    javaHomeOption: 'JDKVersion'
+    sonarQubeRunAnalysis: false
+
 # artifactname=test
 #- task: AndroidSigningm@2
  # inputs
