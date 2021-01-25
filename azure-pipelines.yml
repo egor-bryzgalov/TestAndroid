@@ -13,7 +13,7 @@ pool:
 steps:
 
 - powershell: |
-    touch testFile.xml
+    New-Item -ItemType file testFile.xml
 
 - task: CopyFiles@2
   inputs:
