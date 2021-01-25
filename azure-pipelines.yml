@@ -9,8 +9,8 @@ trigger:
 pool:
   #vmImage: 'Windows-latest'
   name: Default
-  demands:
-      - agent.name -equals o21old
+  #demands:
+  #    - agent.name -equals o21old
 
 steps:
 
