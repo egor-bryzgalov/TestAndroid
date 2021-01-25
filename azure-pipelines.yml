@@ -7,19 +7,16 @@ trigger:
 - master
 
 pool:
-  vmImage: 'Windows-latest'
-  #name: Default
+  #vmImage: 'Windows-latest'
+  name: Default
 
 steps:
 
-- task: PowerShell@2
+- task: CopyFiles@1
   inputs:
-    targetType: 'inline'
-    script: |
-      $pipelineLink = "$env:SYSTEM_TEAMFOUNDATIONCOLLECTIONURI$env:SYSTEM_TEAMPROJECT/_build/results?buildId=$env:BUILD_BUILDID&_a=summary" 
-      $messageText = "Failed to create courtesy push PR. Please review the results of failed build: $($pipelineLink) "
-      $body = '{"text": "'+$($messageText)+'"}'
-      echo $body
+    SourceFolder: 'asdasd'
+    Contents: '**'
+    TargetFolder: 'asd'
 
 
 # artifactname=test
