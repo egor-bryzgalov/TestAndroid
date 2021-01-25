@@ -19,7 +19,7 @@ steps:
   inputs:
     SourceFolder: './'
     Contents: 'testFile.xml'
-    TargetFolder: '\\localhost\d$\Test\copytest'
+    TargetFolder: '\\fs\Public\egor.bryzgalov\test'
     CleanTargetFolder: true
     OverWrite: true
 
