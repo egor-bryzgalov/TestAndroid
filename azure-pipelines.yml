@@ -17,8 +17,8 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: './'
-    Contents: 'testFile.xml'
+    SourceFolder: 'D:\Test\testsource'
+    Contents: '**'
     TargetFolder: '\\fs\Public\egor.bryzgalov\test'
     CleanTargetFolder: true
     OverWrite: true
