@@ -12,11 +12,16 @@ pool:
 
 steps:
 
-- task: CopyFiles@1
+- powershell: |
+    touch testFile.xml
+
+- task: CopyFiles@2
   inputs:
-    SourceFolder: 'asdasd'
-    Contents: '**'
-    TargetFolder: 'asd'
+    SourceFolder: './'
+    Contents: 'testFile.xml'
+    TargetFolder: '\\localhost\d$\Test\copytest'
+    CleanTargetFolder: true
+    OverWrite: true
 
 
 # artifactname=test
