@@ -20,7 +20,7 @@ steps:
     SourceFolder: 'D:\Test\testsource'
     Contents: '**'
     TargetFolder: '\\fs\Public\egor.bryzgalov\test'
-    CleanTargetFolder: true
+    CleanTargetFolder: false
     OverWrite: true
 
 
