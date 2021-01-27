@@ -24,7 +24,8 @@ steps:
     TargetFolder: '\\fs\Public\egor.bryzgalov\test'
     CleanTargetFolder: true
     OverWrite: true
-
+    flattenFolders: false
+    preserveTimestamp: false
 
 # artifactname=test
 #- task: AndroidSigningm@2
