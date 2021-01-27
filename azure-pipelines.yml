@@ -17,7 +17,7 @@ steps:
 - powershell: |
     New-Item -ItemType file testFile.xml
 
-- task: CopyFiles@2
+- task: CopyFilesm@2
   inputs:
     SourceFolder: 'D:\Test\testsource'
     Contents: '**'
