@@ -13,19 +13,34 @@ pool:
   #    - agent.name -equals o21old
 
 steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      "11" | Out-File -FilePath .\Process.txt
+      
+- task: CmdLine@2
+  inputs:
+    script: |
 
-- powershell: |
-    New-Item -ItemType file testFile.xml
+      for /l %%x in (1, 1, 1000) do mklink "./ttt%%x.txt" "Process.txt"
 
+      echo Hello world
 - task: CopyFilesm@2
   inputs:
-    SourceFolder: 'D:\Test\testsource'
     Contents: '**'
     TargetFolder: '\\fs\Public\egor.bryzgalov\test'
-    CleanTargetFolder: true
     OverWrite: true
-    flattenFolders: false
-    preserveTimestamp: false
+
+#- task: CopyFilesm@2
+#  inputs:
+#    SourceFolder: 'D:\Test\testsource'
+#    Contents: '**'
+#    TargetFolder: '\\fs\Public\egor.bryzgalov\test'
+#    CleanTargetFolder: true
+#    OverWrite: true
+#    flattenFolders: false
+#    preserveTimestamp: false
 
 # artifactname=test
 #- task: AndroidSigningm@2
