@@ -14,7 +14,8 @@ pool:
 
 steps:
 
-- task: CopyFilesm@2
+#- task: CopyFilesm@2
+- task: CopyFilesTest@2
   inputs:
     SourceFolder: 'D:\Test\testsource'
     Contents: '**'
