@@ -19,8 +19,9 @@ steps:
   inputs:
     SourceFolder: 'D:\Test\testsource'
     Contents: '**'
-    TargetFolder: '\\fs\Public\egor.bryzgalov\test\'
-    CleanTargetFolder: true
+    #TargetFolder: '\\fs\Public\egor.bryzgalov\test\'
+    TargetFolder: 'D:\Test\NoPermissions'
+    CleanTargetFolder: false
     OverWrite: true
     flattenFolders: false
     preserveTimestamp: false
