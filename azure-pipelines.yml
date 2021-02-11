@@ -20,7 +20,8 @@ steps:
     SourceFolder: 'D:\Test\testsource'
     Contents: '**'
     #TargetFolder: '\\fs\Public\egor.bryzgalov\test\'
-    TargetFolder: 'D:\Test\NoPermissions'
+    #TargetFolder: 'D:\Test\NoPermissions'
+    TargetFolder: 'D:\Test\target'
     CleanTargetFolder: false
     OverWrite: true
     flattenFolders: false
